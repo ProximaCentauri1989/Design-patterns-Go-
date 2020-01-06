@@ -14,7 +14,7 @@ var (
 	once         sync.Once
 )
 
-//Interface for copying from prototype feature 
+//Interface for copying from prototype
 type IClonable interface {
 	Clone() global
 }
