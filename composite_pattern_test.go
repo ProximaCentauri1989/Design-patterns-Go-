@@ -48,4 +48,17 @@ func TestCompositePattern(t *testing.T) {
 	assert.Equal(t, 8, bigBox.Amount())
 
 	bigBox.ListObjects(0)
+	/*Prints a content of the big box (with indent):
+	Box with 'My stuff' contains: 
+		Box with 'My tangled wires' contains: 
+			Item with name 'Xiaomi2A'
+			Item with name 'Xiaomi2.4A'
+			Item with name 'PowerPlugCable'
+		Box with 'My writible objects' contains: 
+			Item with name 'Pen'
+			Item with name 'Black marker'
+			Item with name 'Red marker'
+			Item with name 'Gray pencil'
+		Item with name 'Santa Claus's mustache'
+	*/
 }
