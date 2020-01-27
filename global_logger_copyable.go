@@ -66,7 +66,7 @@ func SetProtoObject(g IConfig) {
 	}
 }
 
-/* It is critical to return the copy of configuration. So let's use the prototype pattern and perform copying
+/*Let's use the prototype pattern and perform copying
    Also, let's use 'sync.Once' instead of checking 'objectWithGlobalData' for nil and perform Init if it so*/
 func GetProtoObject() IConfig  {
 	once.Do(func() {
@@ -75,9 +75,9 @@ func GetProtoObject() IConfig  {
 	return objectWithGlobalData.Clone()
 }
 
-/*createDefault unexported because we won't create Global config through 'createDefault' function.
-  We will use GetInstance constantly (for the first time and in further).
-  To configure the global config we can use 'SetGlobalConfig' to configure it based on modified copy*/
+/*createDefault unexported because we won't create proto object through 'createDefaultObject' function.
+  We will use GetProtoObject constantly (for the first time and in further).
+  To configure the proto object we can use 'SetProtoObject' to configure it based on modified copy*/
 func createDefaultObject() IConfig  {
 	return &protoObject{
 		param: "default",
