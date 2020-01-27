@@ -40,10 +40,6 @@ func (b *Box) Clear() {
 	b.compnts = nil
 }
 
-func (b *Box) IsBox() bool {
-	return true
-}
-
 func (b *Box) Name() string {
 	return b.title
 }
